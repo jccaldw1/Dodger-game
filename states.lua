@@ -68,6 +68,7 @@ states.game = {
 			Bullet.update(dt)
 			for i = 1, #Enemy.list do
 				if CheckCollision(Player, Enemy.list[i]) then
+					-- Restart the game
 					State.change("game")
 					break
 				end
