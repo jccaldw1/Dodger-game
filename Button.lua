@@ -32,11 +32,11 @@ function Button.new(funcToExec, text, x, y, w, h, color, textColor, shape)
 	return button
 end
 
-function Button.ping(x, y, button)
+function Button.ping(x, y, mouseButton)
 	local clickCoords = {}
-	clickCoords.x = x; clickCoords.y = y; clickCoords.w = 0; clickCoords.h = 0
+	clickCoords.x = x; clickCoords.y = y; clickCoords.w = 0; clickCoords.h = 0;
 	for i = 1, #Button.buttons do
-		if CheckCollision(Button.buttons[i], clickCoords) and button == 1 then
+		if CheckCollision(Button.buttons[i], clickCoords) and mouseButton == 1 then
 			Button.buttons[i].func()
 			break -- only one button can be clicked at a time
 		end

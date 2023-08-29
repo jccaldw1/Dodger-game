@@ -15,6 +15,7 @@ states.menu = {
 		local text2 = "Options"
 		local buttonw2 = font:getWidth(text2) + .1 * love.graphics.getWidth()
 		local buttonh2 = font:getHeight(text2) + .1 * love.graphics.getHeight()
+
 		Button.new(
 			function()
 				State.change("game")
@@ -51,8 +52,8 @@ states.menu = {
 			State.change(State.mystates.game)
 		end]]
 	end,
-	mousepressed = function(x, y, button)
-		Button.ping(x, y, button)
+	mousepressed = function(x, y, mouseButton)
+		Button.ping(x, y, mouseButton)
 	end
 }
 
